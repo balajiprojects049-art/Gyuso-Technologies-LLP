@@ -52,15 +52,19 @@ export default function Home() {
     return (
         <div className="overflow-hidden">
             {/* ═══════════════════ HERO ═══════════════════ */}
-            <section className="relative min-h-screen flex items-center bg-hero-gradient hero-noise">
-                {/* Background grid pattern */}
+            <section className="relative min-h-screen flex items-center hero-noise" style={{ background: 'transparent' }}>
+                {/* Hero Background Image */}
                 <div
-                    className="absolute inset-0 opacity-10"
+                    className="absolute inset-0"
                     style={{
-                        backgroundImage: `linear-gradient(rgba(59,130,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.3) 1px, transparent 1px)`,
-                        backgroundSize: '60px 60px',
+                        backgroundImage: `url('/images/Home.png')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
                     }}
                 />
+                {/* Dark overlay for readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-brand/90 via-brand/75 to-brand/50" />
                 {/* Glow circles */}
                 <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl" />
                 <div className="absolute bottom-1/4 left-1/5 w-60 h-60 bg-blue-400/10 rounded-full blur-2xl" />

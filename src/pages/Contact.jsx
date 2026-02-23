@@ -48,14 +48,19 @@ export default function Contact() {
     return (
         <div className="overflow-hidden">
             {/* Hero */}
-            <section className="relative bg-hero-gradient pt-40 pb-24 px-6 overflow-hidden">
+            <section className="relative pt-40 pb-24 px-6 overflow-hidden">
+                {/* Hero Background Image */}
                 <div
-                    className="absolute inset-0 opacity-10"
+                    className="absolute inset-0"
                     style={{
-                        backgroundImage: `linear-gradient(rgba(59,130,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.3) 1px, transparent 1px)`,
-                        backgroundSize: '60px 60px',
+                        backgroundImage: `url('/images/Contact us.png')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
                     }}
                 />
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-brand/85 via-brand/80 to-brand/90" />
                 <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl" />
                 <div className="relative max-w-4xl mx-auto text-center space-y-6">
                     <motion.div

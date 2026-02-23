@@ -138,6 +138,16 @@ export default function SemiconductorServices() {
           HERO — Dark Navy, circuit bg
       ══════════════════════════════ */}
             <section className="relative bg-hero-gradient min-h-[90vh] flex items-center px-6 overflow-hidden">
+                {/* Hero Background Image */}
+                <div
+                    className="absolute inset-0 opacity-30"
+                    style={{
+                        backgroundImage: `url('/images/semi-chip.png')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                    }}
+                />
                 {/* Grid overlay */}
                 <div
                     className="absolute inset-0 opacity-10"
