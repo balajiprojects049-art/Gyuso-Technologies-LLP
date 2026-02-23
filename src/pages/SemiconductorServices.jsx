@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
     HiArrowRight, HiChip, HiCog, HiBeaker,
@@ -129,6 +130,73 @@ const CircuitBg = ({ className = '' }) => (
     </svg>
 )
 
+/* ─── Hero Image Slider ─────────────────────────────────────────────────── */
+const sliderImages = [
+    { src: '/images/semi-chip.png', alt: 'Advanced Semiconductor Chip', label: 'Sub-5nm Mastery' },
+    { src: '/images/semi-lab.png', alt: 'Semiconductor Fabrication Lab', label: 'Fabrication Lab' },
+    { src: '/images/semi-logic.png', alt: 'Digital Logic Design', label: 'Logic Design' },
+    { src: '/images/semi-testing.png', alt: 'Semiconductor Testing & Validation', label: 'Silicon Testing' },
+]
+
+function HeroSlider() {
+    const [current, setCurrent] = useState(0)
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrent((prev) => (prev + 1) % sliderImages.length)
+        }, 2500)
+        return () => clearInterval(timer)
+    }, [])
+
+    return (
+        <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+            {/* Slides */}
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={current}
+                    initial={{ opacity: 0, scale: 1.08 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.8, ease: 'easeInOut' }}
+                    className="absolute inset-0"
+                >
+                    <img
+                        src={sliderImages[current].src}
+                        alt={sliderImages[current].alt}
+                        className="w-full h-full object-cover"
+                    />
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand/80 via-transparent to-transparent" />
+
+                    {/* Image label badge */}
+                    <motion.div
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3, duration: 0.4 }}
+                        className="absolute top-5 right-5 bg-blue-600 text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-lg"
+                    >
+                        {sliderImages[current].label}
+                    </motion.div>
+                </motion.div>
+            </AnimatePresence>
+
+            {/* Dot Indicators */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {sliderImages.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => setCurrent(i)}
+                        className={`rounded-full transition-all duration-300 ${i === current
+                                ? 'w-6 h-2 bg-blue-400'
+                                : 'w-2 h-2 bg-white/40 hover:bg-white/70'
+                            }`}
+                    />
+                ))}
+            </div>
+        </div>
+    )
+}
+
 /* ─── Page ──────────────────────────────────────────────────────────────── */
 export default function SemiconductorServices() {
     return (
@@ -210,25 +278,14 @@ export default function SemiconductorServices() {
                             </motion.div>
                         </div>
 
-                        {/* Right: Premium Hero Image and Stats Overlay */}
+                        {/* Right: Auto-Sliding Image Carousel */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, delay: 0.2 }}
-                            className="relative"
+                            className="relative hidden lg:block"
                         >
-                            <div className="relative aspect-square md:aspect-video lg:aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
-                                <img
-                                    src="/images/semi-chip.png"
-                                    alt="Advanced Semiconductor VLSI Chip"
-                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-brand/80 via-transparent to-transparent opacity-60" />
-
-                                <div className="absolute top-6 right-6 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
-                                    Sub-5nm Mastery
-                                </div>
-                            </div>
+                            <HeroSlider />
 
                             {/* Stats Card Overlay */}
                             <motion.div
