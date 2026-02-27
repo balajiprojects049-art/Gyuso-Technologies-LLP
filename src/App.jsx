@@ -18,6 +18,8 @@ import CyberSecurity from './pages/CyberSecurity'
 import ArtificialIntelligence from './pages/ArtificialIntelligence'
 import MachineLearning from './pages/MachineLearning'
 
+import FloatingWhatsApp from './components/FloatingWhatsApp'
+
 function ScrollToTop() {
     const { pathname } = useLocation()
     useEffect(() => {
@@ -30,6 +32,7 @@ function App() {
     return (
         <Router>
             <ScrollToTop />
+            <FloatingWhatsApp />
             <div className="min-h-screen flex flex-col">
                 <Navbar />
                 <main className="flex-1">

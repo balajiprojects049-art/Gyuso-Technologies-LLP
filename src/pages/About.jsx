@@ -4,7 +4,7 @@ import { HiArrowRight, HiLightBulb, HiEye, HiGlobe, HiChip, HiServer } from 'rea
 import AnimatedSection from '../components/AnimatedSection'
 
 const stats = [
-    { value: '2024', label: 'Founded' },
+    { value: '2021', label: 'Founded' },
     { value: '50+', label: 'Engineers' },
     { value: '2', label: 'Core Verticals' },
     { value: 'IND', label: 'Headquarters' },
@@ -237,7 +237,7 @@ export default function About() {
                                 Contact Us <HiArrowRight />
                             </Link>
                             <Link to="/it-services" className="btn-white">
-                                Our IT Services
+                                Our Semiconductor Services
                             </Link>
                         </div>
                     </AnimatedSection>

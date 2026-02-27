@@ -41,7 +41,13 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // Placeholder submit — no backend
+
+        const { name, email, subject, message } = formState
+        const text = `*New Contact Form Submission*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`
+        const whatsappUrl = `https://wa.me/918125472547?text=${text}`
+
+        window.open(whatsappUrl, '_blank')
+
         setSubmitted(true)
     }
 
