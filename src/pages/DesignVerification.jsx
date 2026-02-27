@@ -120,6 +120,7 @@ export default function DesignVerification() {
                                 </ul>
                             </div>
                             <div className="md:col-span-6 md:col-start-7 bg-slate-900 p-8 rounded-3xl shadow-2xl border border-slate-700 text-slate-300">
+                                <img src="/images/cyber_content_img.png" alt="Verification Metrics and Security" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md border border-slate-800" />
                                 <h4 className="font-bold text-white mb-6">SVA Assertion Example</h4>
                                 <div className="bg-[#0B1121] p-6 rounded-xl border border-slate-800 font-mono text-sm overflow-x-auto">
                                     <span className="text-slate-400">// Checks that an ACK arrives 1 to 3 cycles after REQ</span><br /><br />

@@ -70,6 +70,7 @@ export default function PhysicalDesign() {
 
                         {/* Details grid */}
                         <div className="md:col-span-6 grid grid-cols-1 gap-6">
+                            <img src="/images/cloud_content_img.png" alt="Macro Routing and Design Core" className="w-full h-56 object-cover rounded-[2rem] border border-slate-700 shadow-xl" />
                             <div className="bg-[#1E293B] p-8 rounded-3xl border border-slate-700 shadow-md">
                                 <h4 className="font-bold text-xl text-white mb-3">Power Grid Integrity (IR/EM)</h4>
                                 <p className="text-slate-400 leading-relaxed">

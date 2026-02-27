@@ -69,10 +69,7 @@ export default function AnalogLayout() {
 
                         {/* Image break */}
                         <div className="md:col-span-6 bg-[#1E293B] rounded-3xl p-8 border border-slate-700 shadow-lg flex flex-col justify-center">
-                            <div className="flex gap-2 mb-6 pb-6 border-b border-slate-700">
-                                <div className="w-1/2 h-32 bg-slate-800/50 rounded-lg flex items-center justify-center font-mono text-blue-400 text-sm border-2 border-dashed border-slate-600">A B B A</div>
-                                <div className="w-1/2 h-32 bg-slate-800/50 rounded-lg flex items-center justify-center font-mono text-blue-400 text-sm border-2 border-dashed border-slate-600">B A A B</div>
-                            </div>
+                            <img src="/images/ai_content_img.png" alt="Circuit Architecture Layout" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md border border-slate-800" />
                             <h4 className="font-bold text-xl text-white mb-2">Cross-Coupled Common Centroid</h4>
                             <p className="text-slate-400 leading-relaxed">A standard layout pattern demonstrating the interleaving of transistor components 'A' and 'B' to perfectly distribute thermal and processing gradients across both devices.</p>
                         </div>

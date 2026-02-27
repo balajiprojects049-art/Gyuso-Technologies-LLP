@@ -89,6 +89,7 @@ export default function DFT() {
                                 </p>
                             </div>
                             <div className="lg:col-span-5 bg-[#1E293B] p-8 rounded-3xl border border-slate-700">
+                                <img src="/images/ml_content_img.png" alt="Test Quality Standards" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md border border-slate-800" />
                                 <h4 className="text-sm font-bold tracking-widest uppercase text-slate-400 mb-6">Supported Standards & Tech</h4>
                                 <ul className="space-y-4">
                                     {['Logic BIST (LBIST) for ISO26262 Automotive', 'IEEE 1149.1 & 1149.6 (Boundary Scan)', 'IEEE 1687 (IJTAG) Instrument Network', 'IEEE 1500 Core Wrapper', 'STIL / WGL ATE Pattern Generation'].map(item => (

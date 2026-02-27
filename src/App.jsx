@@ -13,6 +13,10 @@ import DesignVerification from './pages/DesignVerification'
 import DFT from './pages/DFT'
 import PhysicalDesign from './pages/PhysicalDesign'
 import AnalogLayout from './pages/AnalogLayout'
+import Cloud from './pages/Cloud'
+import CyberSecurity from './pages/CyberSecurity'
+import ArtificialIntelligence from './pages/ArtificialIntelligence'
+import MachineLearning from './pages/MachineLearning'
 
 function ScrollToTop() {
     const { pathname } = useLocation()
@@ -39,6 +43,10 @@ function App() {
                         <Route path="/semiconductor-services/physical-design" element={<PhysicalDesign />} />
                         <Route path="/semiconductor-services/analog-layout" element={<AnalogLayout />} />
                         <Route path="/it-services" element={<ITServices />} />
+                        <Route path="/it-services/cloud" element={<Cloud />} />
+                        <Route path="/it-services/cyber-security" element={<CyberSecurity />} />
+                        <Route path="/it-services/ai" element={<ArtificialIntelligence />} />
+                        <Route path="/it-services/ml" element={<MachineLearning />} />
                         <Route path="/careers" element={<Careers />} />
                         <Route path="/contact" element={<Contact />} />
                     </Routes>

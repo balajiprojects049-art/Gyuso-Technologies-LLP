@@ -78,6 +78,8 @@ export default function RTLDesign() {
                         <div className="lg:col-span-2 bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 text-white p-12 lg:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]"></div>
 
+                            <img src="/images/rtl_content_img.png" alt="RTL Logic Microarchitecture Diagram" className="w-full h-80 object-cover rounded-[2rem] border border-blue-500/30 shadow-xl mb-12 relative z-10" />
+
                             <h3 className="text-3xl font-bold mb-8 relative z-10 text-white">Advanced Synthesis & Iteration</h3>
 
                             <div className="grid md:grid-cols-2 gap-12 relative z-10">
