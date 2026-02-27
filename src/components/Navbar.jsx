@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { HiMenuAlt3, HiX } from 'react-icons/hi'
+import { HiMenuAlt3, HiX, HiArrowRight } from 'react-icons/hi'
 import { HiChevronDown } from 'react-icons/hi'
 
 const navLinks = [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
+    { label: 'Overview', path: '/' },
+    { label: 'Who We Are', path: '/about' },
     {
-        label: 'Services',
+        label: 'What We Do',
         children: [
             {
-                label: 'Semiconductor Services',
+                label: 'Semiconductor Engineering',
                 path: '/semiconductor-services',
                 subChildren: [
                     { label: 'RTL Design', path: '/semiconductor-services/rtl-design' },
@@ -19,22 +19,24 @@ const navLinks = [
                     { label: 'Design for Test (DFT)', path: '/semiconductor-services/dft' },
                     { label: 'Physical Design & STA', path: '/semiconductor-services/physical-design' },
                     { label: 'Analog Layout', path: '/semiconductor-services/analog-layout' },
+                    { label: 'Embedded Systems', path: '/semiconductor-services/embedded-systems' },
+                    { label: 'Performance Modeling', path: '/semiconductor-services/performance-modeling' },
                 ]
             },
             {
-                label: 'IT Infra & Technology',
+                label: 'Digital & IT Solutions',
                 path: '/it-services',
                 subChildren: [
-                    { label: 'Cloud', path: '/it-services/cloud' },
-                    { label: 'Cyber Security', path: '/it-services/cyber-security' },
+                    { label: 'Cloud Services', path: '/it-services/cloud' },
+                    { label: 'Cybersecurity', path: '/it-services/cyber-security' },
                     { label: 'Artificial Intelligence', path: '/it-services/ai' },
                     { label: 'Machine Learning', path: '/it-services/ml' },
                 ]
             },
         ],
     },
-    { label: 'Careers', path: '/careers' },
-    { label: 'Contact', path: '/contact' },
+    { label: 'Join Our Team', path: '/careers' },
+    { label: 'Connect With Us', path: '/contact' },
 ]
 
 export default function Navbar() {
@@ -88,79 +90,80 @@ export default function Navbar() {
                         <nav className="hidden lg:flex items-center gap-1">
                             {navLinks.map((link) =>
                                 link.children ? (
-                                    <div key={link.label} className="relative group">
+                                    <div key={link.label} className="relative group/nav h-20 flex items-center">
                                         <button
-                                            className={`flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${scrolled
-                                                ? 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
-                                                : 'text-white/80 hover:text-white hover:bg-white/10'
+                                            className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-300 ${scrolled
+                                                ? 'text-brand hover:text-blue-600'
+                                                : 'text-white hover:text-blue-300'
                                                 }`}
                                         >
                                             {link.label}
-                                            <HiChevronDown className="text-xs group-hover:rotate-180 transition-transform duration-200" />
+                                            <HiChevronDown className="text-[10px] group-hover/nav:-rotate-180 transition-transform duration-300" />
                                         </button>
-                                        {/* Dropdown */}
-                                        <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl shadow-card-hover border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
-                                            <div className="p-2">
+
+                                        {/* Enterprise Mega Menu */}
+                                        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-300 translate-y-4 group-hover/nav:translate-y-0 before:absolute before:-top-4 before:left-0 before:w-full before:h-4 before:bg-transparent overflow-hidden">
+
+                                            {/* Top accent bar */}
+                                            <div className="h-1 w-full bg-gradient-to-r from-blue-600 to-blue-400"></div>
+
+                                            <div className="grid grid-cols-2 p-10 gap-12 bg-gray-50/50">
                                                 {link.children.map((child) => (
-                                                    <div key={child.label} className="relative group/sub">
-                                                        {child.subChildren ? (
-                                                            <>
-                                                                <Link
-                                                                    to={child.path}
-                                                                    className="flex justify-between items-center px-4 py-3 rounded-xl text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 font-medium"
-                                                                >
-                                                                    <div className="flex items-center gap-3">
-                                                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
-                                                                        {child.label}
-                                                                    </div>
-                                                                    <HiChevronDown className="text-sm text-gray-400 group-hover/sub:text-blue-500 -rotate-90 transition-all duration-300" />
-                                                                </Link>
-                                                                {/* Sub-dropdown */}
-                                                                {/* Added pseudo-element to create an invisible bridge preventing hover area loss */}
-                                                                <div className="absolute top-0 left-[calc(100%+0.25rem)] w-[260px] bg-white rounded-2xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 translate-y-2 group-hover/sub:translate-y-0 before:absolute before:-left-4 before:top-0 before:h-full before:w-4 before:bg-transparent">
-                                                                    <div className="p-2 flex flex-col gap-1">
-                                                                        {child.subChildren.map((subChild) => (
-                                                                            <Link
-                                                                                key={subChild.label}
-                                                                                to={subChild.path}
-                                                                                className="group/item relative flex items-center px-4 py-3 rounded-xl text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all duration-300 font-medium overflow-hidden"
-                                                                            >
-                                                                                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-0 w-1 bg-gradient-to-b from-blue-500 to-blue-600 rounded-r-md group-hover/item:h-1/2 transition-all duration-300 opacity-0 group-hover/item:opacity-100" />
-                                                                                <span className="transform translate-x-0 group-hover/item:translate-x-2 transition-transform duration-300">{subChild.label}</span>
-                                                                            </Link>
-                                                                        ))}
-                                                                    </div>
-                                                                </div>
-                                                            </>
-                                                        ) : (
-                                                            <Link
-                                                                to={child.path}
-                                                                className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 font-medium"
-                                                            >
-                                                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
-                                                                {child.label}
-                                                            </Link>
+                                                    <div key={child.label} className="space-y-6">
+                                                        <Link
+                                                            to={child.path}
+                                                            className="inline-flex items-center gap-2 text-lg font-bold text-brand hover:text-blue-600 transition-colors font-display group/title"
+                                                        >
+                                                            {child.label}
+                                                            <HiArrowRight className="text-sm opacity-0 -translate-x-2 group-hover/title:opacity-100 group-hover/title:translate-x-0 transition-all text-blue-600" />
+                                                        </Link>
+
+                                                        <hr className="border-gray-200" />
+
+                                                        {child.subChildren && (
+                                                            <div className="flex flex-col gap-4">
+                                                                {child.subChildren.map((subChild) => (
+                                                                    <Link
+                                                                        key={subChild.label}
+                                                                        to={subChild.path}
+                                                                        className="group/item flex items-center gap-3 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
+                                                                    >
+                                                                        <div className="w-1.5 h-1.5 rounded-full bg-blue-100 group-hover/item:bg-blue-600 group-hover/item:scale-150 transition-all duration-300" />
+                                                                        <span className="group-hover/item:translate-x-1 transition-transform duration-300">{subChild.label}</span>
+                                                                    </Link>
+                                                                ))}
+                                                            </div>
                                                         )}
                                                     </div>
                                                 ))}
                                             </div>
+                                            <div className="bg-blue-50/50 border-t border-blue-100/50 px-10 py-6 flex justify-between items-center">
+                                                <div>
+                                                    <p className="text-sm font-bold text-brand mb-1">Need help choosing a service?</p>
+                                                    <p className="text-xs text-gray-500">Our experts are ready to guide you.</p>
+                                                </div>
+                                                <Link to="/contact" className="btn-primary py-2 px-5 text-xs">
+                                                    Talk to an expert
+                                                </Link>
+                                            </div>
                                         </div>
                                     </div>
                                 ) : (
-                                    <Link
-                                        key={link.path}
-                                        to={link.path}
-                                        className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${isActive(link.path)
-                                            ? scrolled
-                                                ? 'text-blue-600 bg-blue-50'
-                                                : 'text-white bg-white/15'
-                                            : scrolled
-                                                ? 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
-                                                : 'text-white/80 hover:text-white hover:bg-white/10'
-                                            }`}
-                                    >
-                                        {link.label}
-                                    </Link>
+                                    <div key={link.path} className="h-20 flex items-center">
+                                        <Link
+                                            to={link.path}
+                                            className={`px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-300 ${isActive(link.path)
+                                                ? scrolled
+                                                    ? 'text-blue-600 bg-blue-50'
+                                                    : 'text-white bg-white/20'
+                                                : scrolled
+                                                    ? 'text-brand hover:text-blue-600 hover:bg-blue-50/50'
+                                                    : 'text-white hover:text-blue-300 hover:bg-white/10'
+                                                }`}
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </div>
                                 )
                             )}
                         </nav>

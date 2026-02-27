@@ -13,6 +13,8 @@ import DesignVerification from './pages/DesignVerification'
 import DFT from './pages/DFT'
 import PhysicalDesign from './pages/PhysicalDesign'
 import AnalogLayout from './pages/AnalogLayout'
+import EmbeddedSystems from './pages/EmbeddedSystems'
+import PerformanceModeling from './pages/PerformanceModeling'
 import Cloud from './pages/Cloud'
 import CyberSecurity from './pages/CyberSecurity'
 import ArtificialIntelligence from './pages/ArtificialIntelligence'
@@ -45,6 +47,8 @@ function App() {
                         <Route path="/semiconductor-services/dft" element={<DFT />} />
                         <Route path="/semiconductor-services/physical-design" element={<PhysicalDesign />} />
                         <Route path="/semiconductor-services/analog-layout" element={<AnalogLayout />} />
+                        <Route path="/semiconductor-services/embedded-systems" element={<EmbeddedSystems />} />
+                        <Route path="/semiconductor-services/performance-modeling" element={<PerformanceModeling />} />
                         <Route path="/it-services" element={<ITServices />} />
                         <Route path="/it-services/cloud" element={<Cloud />} />
                         <Route path="/it-services/cyber-security" element={<CyberSecurity />} />

@@ -19,14 +19,14 @@ import ServiceCard from '../components/ServiceCard'
 const services = [
     {
         icon: HiChip,
-        title: 'Semiconductor Services',
-        description: 'Expert VLSI design, verification, and semiconductor engineering solutions for chip-to-system development.',
+        title: 'Semiconductor Engineering',
+        description: 'Transforming ideas into innovative silicon solutions. We provide reliable system design services from concept to chip.',
         href: '/semiconductor-services',
     },
     {
         icon: HiServer,
-        title: 'IT Infra & Technology',
-        description: 'End-to-end enterprise IT infrastructure, cloud, cybersecurity, AI/ML, and SAP solutions.',
+        title: 'Digital & IT Solutions',
+        description: 'Leverage AI-driven automation for seamless cloud migration, cybersecurity, and intelligent enterprise IT transformations.',
         href: '/it-services',
     },
 ]
@@ -80,7 +80,7 @@ export default function Home() {
                                 className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full"
                             >
                                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-                                Semiconductor & IT Technology Leader
+                                AI-led, Digital & Systems Engineering
                             </motion.div>
 
                             <motion.h1
@@ -89,9 +89,9 @@ export default function Home() {
                                 transition={{ duration: 0.8, delay: 0.15 }}
                                 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] font-display"
                             >
-                                Powering the{' '}
-                                <span className="gradient-text">Future</span>
-                                {' '}of Technology
+                                Owning <br />
+                                <span className="gradient-text">End-to-End</span>
+                                {' '}Solutions
                             </motion.h1>
 
                             <motion.p
@@ -100,7 +100,7 @@ export default function Home() {
                                 transition={{ duration: 0.7, delay: 0.3 }}
                                 className="text-blue-100/80 text-lg leading-relaxed max-w-lg"
                             >
-                                GYUSO Technologies delivers world-class VLSI & Semiconductor Engineering with enterprise IT Infrastructure solutions — from chip design to cloud transformation.
+                                GYUSO Technologies is a trusted engineering partner driving innovation by designing and building intelligent systems across the full technology stack — from chip to cloud.
                             </motion.p>
 
                             <motion.div
@@ -110,10 +110,10 @@ export default function Home() {
                                 className="flex flex-col sm:flex-row gap-4"
                             >
                                 <Link to="/it-services" className="btn-primary">
-                                    Explore Services <HiArrowRight />
+                                    Discover What We Do <HiArrowRight />
                                 </Link>
                                 <Link to="/about" className="btn-white">
-                                    About GYUSO
+                                    Who We Are
                                 </Link>
                             </motion.div>
 
@@ -199,13 +199,13 @@ export default function Home() {
                             <div className="space-y-6">
                                 <span className="section-label">Who We Are</span>
                                 <h2 className="section-title">
-                                    Bridging Silicon Innovation<br />with Digital Transformation
+                                    Committed to Transforming<br />Businesses
                                 </h2>
                                 <p className="text-gray-500 text-base leading-relaxed">
-                                    GYUSO Technologies LLP is a specialized technology services company headquartered in Hyderabad, India. We combine deep semiconductor engineering expertise with enterprise-grade IT infrastructure capabilities to deliver comprehensive technology solutions.
+                                    GYUSO Technologies is a trusted AI-led, Digital & Systems Engineering Partner driving innovation by designing and building intelligent systems. By integrating deep semiconductor engineering with data-powered cloud solutions, we help enterprises accelerate their digital transformation.
                                 </p>
                                 <p className="text-gray-500 text-base leading-relaxed">
-                                    From VLSI chip design and verification to multi-cloud architecture, AI/ML implementations, and SAP enterprise solutions — we partner with organizations to accelerate their technology journey.
+                                    Partner with us to optimize operations, achieve scalable business outcomes, turn complexity into clarity, and shape the future of your organization from chip to cloud.
                                 </p>
                                 <Link to="/about" className="btn-outline inline-flex mt-4">
                                     Learn More About Us <HiArrowRight />
@@ -238,10 +238,10 @@ export default function Home() {
             <section className="section-padding bg-gray-50">
                 <div className="container-max">
                     <AnimatedSection className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                        <span className="section-label">Our Core Offerings</span>
-                        <h2 className="section-title">Industry-Leading Technology Services</h2>
+                        <span className="section-label">What We Do</span>
+                        <h2 className="section-title">Chart Your Future Course With Confidence</h2>
                         <p className="section-subtitle mx-auto">
-                            Specialized solutions across two critical technology domains — from silicon to software.
+                            Our comprehensive suite of Digital Transformation and Engineering solutions empower you to be future-ready.
                         </p>
                     </AnimatedSection>
 
@@ -321,6 +321,137 @@ export default function Home() {
                             ))}
                         </div>
                     </AnimatedSection>
+                </div>
+            </section>
+
+            {/* ═══════════════════ CASE STUDIES ═══════════════════ */}
+            <section className="section-padding bg-white">
+                <div className="container-max">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                        <AnimatedSection className="space-y-4">
+                            <span className="section-label">Success Stories</span>
+                            <h2 className="section-title">Case Studies</h2>
+                        </AnimatedSection>
+                        <AnimatedSection delay={0.2}>
+                            <Link to="/about" className="text-sm font-semibold text-brand hover:text-blue-600 transition-colors flex items-center gap-2">
+                                View All <HiArrowRight />
+                            </Link>
+                        </AnimatedSection>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {[
+                            { title: 'AI-Driven Security Ops for US Healthcare', img: '/images/cyber_content_img.png', link: '#' },
+                            { title: '7nm FinFET Tape-Out for Global Semiconductor Leader', img: '/images/analog_hero.png', link: '#' },
+                            { title: 'Seamless AWS to Azure Migration for Fortune 500', img: '/images/cloud_hero_img_2.png', link: '#' }
+                        ].map((caseStudy, i) => (
+                            <AnimatedSection key={i} delay={i * 0.15}>
+                                <div className="group rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card transition-all duration-300 h-full flex flex-col">
+                                    <div className="h-48 overflow-hidden relative shrink-0">
+                                        <div className="absolute inset-0 bg-brand/10 group-hover:bg-transparent transition-colors z-10" />
+                                        <img src={caseStudy.img} alt={caseStudy.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    </div>
+                                    <div className="p-6 bg-white flex flex-col items-start gap-4 flex-1 justify-between">
+                                        <h3 className="text-lg font-bold text-brand leading-snug">{caseStudy.title}</h3>
+                                        <Link to={caseStudy.link} className="text-sm font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 group-hover:gap-2 transition-all mt-4">
+                                            Know more <HiArrowRight />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </AnimatedSection>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════════════ WHAT WE THINK ═══════════════════ */}
+            <section className="section-padding bg-gray-50 border-t border-gray-100">
+                <div className="container-max">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                        <AnimatedSection className="space-y-4">
+                            <span className="section-label">Insights & Resources</span>
+                            <h2 className="section-title">What We Think</h2>
+                        </AnimatedSection>
+                        <AnimatedSection delay={0.2}>
+                            <Link to="/about" className="text-sm font-semibold text-brand hover:text-blue-600 transition-colors flex items-center gap-2">
+                                View All Insights <HiArrowRight />
+                            </Link>
+                        </AnimatedSection>
+                    </div>
+
+                    <div className="grid lg:grid-cols-2 gap-8">
+                        <AnimatedSection>
+                            <div className="relative rounded-3xl overflow-hidden group h-full min-h-[400px]">
+                                <img src="/images/ai_hero_img.png" alt="AI Agentic Telecom" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/40 to-transparent" />
+                                <div className="absolute bottom-0 left-0 p-8 space-y-4">
+                                    <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider">Whitepaper</span>
+                                    <h3 className="text-2xl font-bold text-white leading-tight">Beyond Migration: How AI-powered FinOps is Redefining Cloud Transformation</h3>
+                                </div>
+                            </div>
+                        </AnimatedSection>
+                        <div className="flex flex-col gap-6">
+                            {[
+                                { type: 'E-Book', title: 'Zero Trust Architecture for Modern 5G Networks', img: '/images/cyber_hero_img_2.png' },
+                                { type: 'Blogs', title: 'Why 2026 Will Be a Breakthrough Year for Custom AI Chips and Semiconductors', img: '/images/ml_content_img.png' },
+                                { type: 'Whitepaper', title: 'Transforming Telecom with Agentic AI: Use Cases and Frameworks', img: '/images/cloud_content_img.png' }
+                            ].map((insight, i) => (
+                                <AnimatedSection key={i} delay={0.2 + (i * 0.1)}>
+                                    <div className="flex sm:flex-row flex-col gap-6 group cursor-pointer bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-card transition-all">
+                                        <div className="w-full sm:w-1/3 h-40 sm:h-32 rounded-xl overflow-hidden shrink-0 relative">
+                                            <div className="absolute inset-0 bg-brand/10 group-hover:bg-transparent transition-colors z-10" />
+                                            <img src={insight.img} alt={insight.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                        </div>
+                                        <div className="flex flex-col justify-center gap-2 pr-4 py-2">
+                                            <span className="text-blue-600 text-xs font-bold uppercase tracking-wider">{insight.type}</span>
+                                            <h3 className="text-lg font-bold text-brand leading-snug group-hover:text-blue-600 transition-colors">{insight.title}</h3>
+                                        </div>
+                                    </div>
+                                </AnimatedSection>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════════════ JOIN OUR TEAM ═══════════════════ */}
+            <section className="py-24 px-6 bg-white overflow-hidden relative">
+                <div className="absolute right-0 top-0 w-1/2 h-full bg-blue-50/50 skew-x-12 translate-x-32 hidden lg:block border-l border-blue-100 pointer-events-none" />
+                <div className="container-max relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <AnimatedSection className="space-y-6">
+                            <span className="section-label">Join Our Team</span>
+                            <h2 className="text-4xl md:text-5xl font-bold font-display text-brand leading-tight">
+                                Craft your legacy.<br />
+                                <span className="text-blue-600">Unleash your potential</span><br />
+                                at GYUSO Technologies.
+                            </h2>
+                            <p className="text-gray-500 text-lg leading-relaxed max-w-lg">
+                                Are you ready to write your career's next chapter? Explore our open positions and discover how your skills can propel the future of semiconductor engineering and cloud technology.
+                            </p>
+                            <Link to="/careers" className="btn-primary inline-flex mt-4 group">
+                                Your Dream Career Awaits <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </AnimatedSection>
+
+                        <AnimatedSection delay={0.2} className="relative hidden md:block">
+                            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 aspect-square lg:aspect-[4/3]">
+                                <img src="/images/Contact us.png" alt="Join Our Team" className="w-full h-full object-cover" />
+                                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-transparent" />
+                            </div>
+                            <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
+                                        50+
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-brand">Deep Tech Experts</p>
+                                        <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold">Join the Elite</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </AnimatedSection>
+                    </div>
                 </div>
             </section>
 
