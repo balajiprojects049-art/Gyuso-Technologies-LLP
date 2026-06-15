@@ -152,9 +152,9 @@ export default function About() {
                             <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 space-y-5">
                                 <h3 className="text-lg font-bold text-brand font-display">At a Glance</h3>
                                 {glanceItems.map((item) => (
-                                    <div key={item.key} className="flex gap-4 pb-5 border-b border-gray-100 last:border-0 last:pb-0">
-                                        <span className="text-sm text-gray-400 font-medium w-36 flex-shrink-0">{item.key}</span>
-                                        <span className="text-sm text-brand font-semibold">{item.val}</span>
+                                    <div key={item.key} className="flex flex-col sm:flex-row sm:gap-4 gap-1 pb-5 border-b border-gray-100 last:border-0 last:pb-0">
+                                        <span className="text-sm text-gray-400 font-medium sm:w-36 flex-shrink-0">{item.key}</span>
+                                        <span className="text-sm text-brand font-semibold break-words">{item.val}</span>
                                     </div>
                                 ))}
                             </div>
@@ -209,7 +209,7 @@ export default function About() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                                className="group flex gap-6 p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-card transition-all duration-300"
+                                className="group flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-card transition-all duration-300"
                             >
                                 <div className="w-14 h-14 bg-blue-600/10 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300 flex-shrink-0">
                                     <area.icon className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors duration-300" />

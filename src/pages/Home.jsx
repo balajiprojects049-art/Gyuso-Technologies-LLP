@@ -286,30 +286,34 @@ export default function Home() {
             </section>
 
             {/* ═══════════════════ TECH EXPERTISE ═══════════════════ */}
-            <section className="section-padding bg-gray-50">
+            <section className="section-padding bg-gray-50 overflow-hidden">
                 <div className="container-max">
                     <AnimatedSection className="text-center max-w-2xl mx-auto mb-16 space-y-4">
                         <span className="section-label">Technology Expertise</span>
                         <h2 className="section-title">Built on Industry-Leading Tools</h2>
                     </AnimatedSection>
+                </div>
 
+                <div className="relative w-full max-w-full overflow-hidden pb-10">
+                    {/* Fade Masks */}
+                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+
+                    <div className="animate-marquee flex gap-6 w-max">
+                        {[...techStack, ...techStack].map((tech, i) => (
+                            <div
+                                key={i}
+                                className="px-8 py-3.5 bg-white border border-gray-200 rounded-full text-base font-bold text-gray-700 shadow-sm hover:border-blue-400 hover:text-blue-600 hover:shadow-card transition-all duration-300 whitespace-nowrap cursor-default"
+                            >
+                                {tech}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="container-max">
                     <AnimatedSection>
-                        <div className="flex flex-wrap justify-center gap-3">
-                            {techStack.map((tech, i) => (
-                                <motion.span
-                                    key={tech}
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.4, delay: i * 0.04 }}
-                                    className="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-sm font-semibold text-gray-700 hover:border-blue-400 hover:text-blue-600 hover:shadow-card transition-all duration-200 cursor-default"
-                                >
-                                    {tech}
-                                </motion.span>
-                            ))}
-                        </div>
-
-                        <div className="mt-16 flex justify-center items-center gap-6 flex-wrap">
+                        <div className="mt-8 flex justify-center items-center gap-6 flex-wrap">
                             {[
                                 { label: 'Amazon Web Services', short: 'AWS', color: 'bg-orange-50 border-orange-200 text-orange-700' },
                                 { label: 'Microsoft Azure', short: 'Azure', color: 'bg-blue-50 border-blue-200 text-blue-700' },

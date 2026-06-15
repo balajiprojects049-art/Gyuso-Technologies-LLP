@@ -19,7 +19,7 @@ export default function PerformanceModeling() {
                 />
                 <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0B1121] via-[#0B1121]/90 to-[#0B1121]/50" />
 
-                <div className="container-max relative z-10">
+                <div className="container-max px-6 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-8">
                             <motion.div
@@ -67,7 +67,7 @@ export default function PerformanceModeling() {
 
             {/* ═══════════════════ CONTENT SECTION 1 ═══════════════════ */}
             <section className="py-20 relative">
-                <div className="container-max">
+                <div className="container-max px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <AnimatedSection className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-white font-display">
@@ -124,7 +124,7 @@ export default function PerformanceModeling() {
             <section className="py-20 bg-[#0F172A] relative overflow-hidden border-y border-blue-900/30">
                 <div className="absolute top-0 right-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl"></div>
 
-                <div className="container-max relative z-10">
+                <div className="container-max px-6 relative z-10">
                     <AnimatedSection className="text-center max-w-3xl mx-auto mb-16 space-y-4">
                         <h2 className="text-3xl md:text-4xl font-bold text-white font-display">
                             Modeling <span className="text-indigo-400">Capabilities</span>
@@ -169,7 +169,7 @@ export default function PerformanceModeling() {
             {/* ═══════════════════ CTA BANNER ═══════════════════ */}
             <section className="relative py-24 px-6 overflow-hidden">
                 <div className="absolute inset-0 bg-indigo-600/5 mix-blend-overlay"></div>
-                <div className="container-max relative z-10 text-center space-y-8">
+                <div className="container-max px-6 relative z-10 text-center space-y-8">
                     <AnimatedSection>
                         <h2 className="text-3xl md:text-5xl font-bold text-white font-display">
                             Validate Performance At The Architectural Level

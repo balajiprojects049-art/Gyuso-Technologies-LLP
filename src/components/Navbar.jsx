@@ -56,6 +56,18 @@ export default function Navbar() {
         setServicesOpen(false)
     }, [location])
 
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = ''
+        }
+        return () => {
+            document.body.style.overflow = ''
+        }
+    }, [mobileOpen])
+
     const isActive = (path) => location.pathname === path
 
     return (
@@ -199,7 +211,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.25 }}
-                        className="fixed inset-x-0 top-20 z-40 bg-white border-b border-gray-100 shadow-xl lg:hidden"
+                        className="fixed inset-x-0 top-20 z-40 bg-white border-b border-gray-100 shadow-xl lg:hidden max-h-[calc(100vh-80px)] overflow-y-auto"
                     >
                         <div className="max-w-7xl mx-auto px-6 py-6 space-y-1">
                             {navLinks.map((link) =>

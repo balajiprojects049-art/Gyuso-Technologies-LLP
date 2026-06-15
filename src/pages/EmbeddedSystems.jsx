@@ -19,7 +19,7 @@ export default function EmbeddedSystems() {
                 />
                 <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0B1121] via-[#0B1121]/90 to-[#0B1121]/60" />
 
-                <div className="container-max relative z-10">
+                <div className="container-max px-6 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-8">
                             <motion.div
@@ -67,13 +67,13 @@ export default function EmbeddedSystems() {
 
             {/* ═══════════════════ CONTENT SECTION 1 ═══════════════════ */}
             <section className="py-20 relative">
-                <div className="container-max">
+                <div className="container-max px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <AnimatedSection className="space-y-6">
-                            <h2 className="text-3xl md:text-4xl font-bold text-white font-display">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white font-display break-words">
                                 Intelligent Solutions for <span className="text-blue-500">Connected Devices</span>
                             </h2>
-                            <p className="text-gray-400 leading-relaxed text-lg">
+                            <p className="text-gray-400 leading-relaxed text-base md:text-lg">
                                 In today's interconnected world, embedded systems are the silent engines powering innovation across industries. GYUSO Technologies provides comprehensive embedded engineering services, combining deep domain knowledge in IoT, automotive, industrial automation, and consumer electronics to build scalable and secure systems.
                             </p>
                             <p className="text-gray-400 leading-relaxed text-lg">
@@ -89,7 +89,7 @@ export default function EmbeddedSystems() {
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-center gap-3 bg-blue-900/10 border border-blue-900/30 p-3 rounded-lg text-gray-300">
                                         <HiCheckCircle className="text-blue-500 w-5 h-5 shrink-0" />
-                                        <span className="font-medium text-sm">{item}</span>
+                                        <span className="font-medium text-sm break-words">{item}</span>
                                     </div>
                                 ))}
                             </div>
@@ -103,14 +103,14 @@ export default function EmbeddedSystems() {
                                     alt="Embedded Systems Team"
                                     className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
                                 />
-                                <div className="absolute -bottom-6 -left-6 bg-[#0B1121] p-6 rounded-2xl border border-blue-900/50 shadow-xl z-20">
+                                <div className="absolute -bottom-4 sm:-bottom-6 left-4 sm:-left-6 right-4 sm:right-auto bg-[#0B1121] p-4 sm:p-6 rounded-2xl border border-blue-900/50 shadow-xl z-20">
                                     <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
-                                            <HiCubeTransparent className="text-white w-6 h-6" />
+                                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
+                                            <HiCubeTransparent className="text-white w-5 h-5 sm:w-6 sm:h-6" />
                                         </div>
                                         <div>
-                                            <p className="text-white font-bold text-lg">End-to-End</p>
-                                            <p className="text-blue-400 text-sm">System Integration</p>
+                                            <p className="text-white font-bold text-base sm:text-lg">End-to-End</p>
+                                            <p className="text-blue-400 text-xs sm:text-sm">System Integration</p>
                                         </div>
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@ export default function EmbeddedSystems() {
             <section className="py-20 bg-[#0F172A] relative overflow-hidden border-y border-blue-900/30">
                 <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
 
-                <div className="container-max relative z-10">
+                <div className="container-max px-6 relative z-10">
                     <AnimatedSection className="text-center max-w-3xl mx-auto mb-16 space-y-4">
                         <h2 className="text-3xl md:text-4xl font-bold text-white font-display">
                             Our Embedded <span className="text-blue-500">Expertise</span>
@@ -153,12 +153,12 @@ export default function EmbeddedSystems() {
                             },
                         ].map((cap, i) => (
                             <AnimatedSection key={i} delay={i * 0.15}>
-                                <div className="bg-[#0B1121] p-8 rounded-2xl border border-blue-900/30 hover:border-blue-700 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 h-full">
+                                <div className="bg-[#0B1121] p-6 md:p-8 rounded-2xl border border-blue-900/30 hover:border-blue-700 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 h-full">
                                     <div className="w-14 h-14 bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 text-blue-500">
                                         <cap.icon className="w-7 h-7" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
-                                    <p className="text-gray-400 leading-relaxed">{cap.desc}</p>
+                                    <h3 className="text-xl font-bold text-white mb-3 break-words">{cap.title}</h3>
+                                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">{cap.desc}</p>
                                 </div>
                             </AnimatedSection>
                         ))}
@@ -169,7 +169,7 @@ export default function EmbeddedSystems() {
             {/* ═══════════════════ CTA BANNER ═══════════════════ */}
             <section className="relative py-24 px-6 overflow-hidden">
                 <div className="absolute inset-0 bg-blue-600/5 mix-blend-overlay"></div>
-                <div className="container-max relative z-10 text-center space-y-8">
+                <div className="container-max px-6 relative z-10 text-center space-y-8">
                     <AnimatedSection>
                         <h2 className="text-3xl md:text-5xl font-bold text-white font-display">
                             Ready to Build Your Next Embedded Device?

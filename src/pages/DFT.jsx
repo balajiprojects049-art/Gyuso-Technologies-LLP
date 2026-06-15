@@ -47,11 +47,11 @@ export default function DFT() {
 
                     <div className="space-y-24">
                         {/* Section 1: Scan & ATPG */}
-                        <div className="grid lg:grid-cols-2 gap-16 items-start">
-                            <div className="bg-[#1E293B] p-10 rounded-[2.5rem] border border-slate-700 relative overflow-hidden h-full shadow-lg">
+                        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
+                            <div className="bg-[#1E293B] p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] border border-slate-700 relative overflow-hidden h-full shadow-lg">
                                 <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                                 <HiBeaker className="text-5xl text-blue-500 mb-6" />
-                                <h3 className="text-2xl font-bold text-white mb-4">Scan Chain Insertion & Advanced ATPG</h3>
+                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 break-words">Scan Chain Insertion & Advanced ATPG</h3>
                                 <div className="prose text-slate-300 leading-relaxed">
                                     <p className="mb-4">
                                         The foundation of our logic testing is Scan Design. We run synthesis wrappers to convert standard flip-flops into scan flip-flops, stitching them into extensive scan chains. This transforms the deeply sequential logic of your SoC into a highly controllable and observable combinational state machine during test mode.
@@ -62,23 +62,23 @@ export default function DFT() {
                                 </div>
                             </div>
 
-                            <div className="space-y-10">
-                                <div className="bg-[#1E293B] p-8 rounded-3xl border border-slate-700 shadow-sm">
-                                    <h4 className="font-bold text-xl text-white mb-4 flex items-center gap-3"><span className="text-blue-500">01.</span> Test Compression Architectures</h4>
-                                    <p className="text-slate-300 leading-relaxed">To manage massive SoC gate counts, we implement advanced logic compression networks (like Synopsys DFTMAX or Mentor TestKompress). This reduces the massive volume of ATPG data by margins of 50x to 100x, allowing complex chips to be tested on older, cheaper ATE machines with limited memory depth, directly saving manufacturing costs.</p>
+                            <div className="space-y-6 md:space-y-10">
+                                <div className="bg-[#1E293B] p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-700 shadow-sm">
+                                    <h4 className="font-bold text-lg md:text-xl text-white mb-4 flex items-center gap-3 break-words"><span className="text-blue-500">01.</span> Test Compression Architectures</h4>
+                                    <p className="text-slate-300 leading-relaxed text-sm md:text-base">To manage massive SoC gate counts, we implement advanced logic compression networks (like Synopsys DFTMAX or Mentor TestKompress). This reduces the massive volume of ATPG data by margins of 50x to 100x, allowing complex chips to be tested on older, cheaper ATE machines with limited memory depth, directly saving manufacturing costs.</p>
                                 </div>
-                                <div className="bg-[#1E293B] p-8 rounded-3xl border border-slate-700 shadow-sm">
-                                    <h4 className="font-bold text-xl text-white mb-4 flex items-center gap-3"><span className="text-blue-500">02.</span> At-Speed Testing Architectures (OCC)</h4>
-                                    <p className="text-slate-300 leading-relaxed">Static stuck-at testing cannot catch slow transistors. To catch transition faults, we implement On-Chip Clock Controllers (OCC). During testing, the OCC switches from the slow, external ATE shift clock to the high-speed internal PLL clock for precisely two launch-and-capture cycles, allowing us to verify the chip's exact operational frequency thresholds under real silicon conditions.</p>
+                                <div className="bg-[#1E293B] p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-700 shadow-sm">
+                                    <h4 className="font-bold text-lg md:text-xl text-white mb-4 flex items-center gap-3 break-words"><span className="text-blue-500">02.</span> At-Speed Testing Architectures (OCC)</h4>
+                                    <p className="text-slate-300 leading-relaxed text-sm md:text-base">Static stuck-at testing cannot catch slow transistors. To catch transition faults, we implement On-Chip Clock Controllers (OCC). During testing, the OCC switches from the slow, external ATE shift clock to the high-speed internal PLL clock for precisely two launch-and-capture cycles, allowing us to verify the chip's exact operational frequency thresholds under real silicon conditions.</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* Section 2: MBIST */}
-                        <div className="grid lg:grid-cols-12 gap-12 items-center bg-[#0B1121] border border-slate-800 rounded-[3rem] p-10 lg:p-16 text-white shadow-2xl">
+                        <div className="grid lg:grid-cols-12 gap-8 md:gap-12 items-center bg-[#0B1121] border border-slate-800 rounded-3xl md:rounded-[3rem] p-6 md:p-10 lg:p-16 text-white shadow-2xl">
                             <div className="lg:col-span-7">
-                                <h3 className="text-3xl font-bold font-display mb-6">Memory BIST & Built-In Self-Repair</h3>
-                                <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                                <h3 className="text-2xl md:text-3xl font-bold font-display mb-6 break-words">Memory BIST & Built-In Self-Repair</h3>
+                                <p className="text-slate-300 text-base md:text-lg leading-relaxed mb-6">
                                     Modern System-on-Chips consist of up to 60-70% embedded static RAM (SRAM). These dense memory arrays are highly susceptible to manufacturing defects. Because routing external ATE access to every internal SRAM is impossible, we embed Memory Built-In Self Test (MBIST) controllers directly into the RTL.
                                 </p>
                                 <p className="text-slate-300 leading-relaxed mb-6">
@@ -88,7 +88,7 @@ export default function DFT() {
                                     More importantly, we implement Built-In Self Repair (BISR). We design memories with redundant rows and columns. When the MBIST detects a defect on the wafer, it calculates a repair signature and programs an eFuse (electrical fuse) array. On boot-up, the BISR controller automatically remaps the broken addresses to the redundant rows, salvaging a defective die and actively pushing wafer yield percentages dramatically higher.
                                 </p>
                             </div>
-                            <div className="lg:col-span-5 bg-[#1E293B] p-8 rounded-3xl border border-slate-700">
+                            <div className="lg:col-span-5 bg-[#1E293B] p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-700">
                                 <img src="/images/ml_content_img.png" alt="Test Quality Standards" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md border border-slate-800" />
                                 <h4 className="text-sm font-bold tracking-widest uppercase text-slate-400 mb-6">Supported Standards & Tech</h4>
                                 <ul className="space-y-4">

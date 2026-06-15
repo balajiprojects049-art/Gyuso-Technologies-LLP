@@ -41,7 +41,7 @@ export default function RTLDesign() {
                 <div className="max-w-7xl mx-auto px-6">
 
                     <div className="mb-20 max-w-4xl">
-                        <h2 className="text-4xl font-bold font-display text-white mb-8 border-l-4 border-blue-500 pl-6">The Microarchitectural Phase</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-8 border-l-4 border-blue-500 pl-6 break-words">The Microarchitectural Phase</h2>
                         <p className="text-lg text-slate-300 leading-relaxed mb-6">
                             RTL (Register-Transfer Level) design is the crucial bridge connecting abstract architectural intent (like a massive AI networking stack) to the physical gates that will eventually be printed on a silicon wafer. Poorly architected RTL results in severe routing congestion, bloated power consumption, and missed timing targets.
                         </p>
@@ -75,23 +75,23 @@ export default function RTLDesign() {
                         </div>
 
                         {/* Domain 3 - Full Width */}
-                        <div className="lg:col-span-2 bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 text-white p-12 lg:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                        <div className="lg:col-span-2 bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 text-white p-6 md:p-12 lg:p-16 rounded-3xl md:rounded-[3rem] shadow-2xl relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]"></div>
 
-                            <img src="/images/rtl_content_img.png" alt="RTL Logic Microarchitecture Diagram" className="w-full h-80 object-cover rounded-[2rem] border border-blue-500/30 shadow-xl mb-12 relative z-10" />
+                            <img src="/images/rtl_content_img.png" alt="RTL Logic Microarchitecture Diagram" className="w-full h-80 object-cover rounded-2xl md:rounded-[2rem] border border-blue-500/30 shadow-xl mb-12 relative z-10" />
 
-                            <h3 className="text-3xl font-bold mb-8 relative z-10 text-white">Advanced Synthesis & Iteration</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold mb-8 relative z-10 text-white">Advanced Synthesis & Iteration</h3>
 
-                            <div className="grid md:grid-cols-2 gap-12 relative z-10">
+                            <div className="grid md:grid-cols-2 gap-8 md:gap-12 relative z-10">
                                 <div>
-                                    <p className="text-blue-100 leading-relaxed mb-6 text-lg">
+                                    <p className="text-blue-100 leading-relaxed mb-6 text-base md:text-lg">
                                         Writing logic is easy; writing logic that can be synthesized into physical gates running at 3 Gigahertz on a TSMC 5nm node is exceptionally difficult. We deploy iterative synthesis flows right alongside our RTL coding.
                                     </p>
-                                    <p className="text-blue-100 leading-relaxed text-lg">
+                                    <p className="text-blue-100 leading-relaxed text-base md:text-lg">
                                         We push preliminary RTL through synthesis compilers (like Design Compiler or Genus) constantly to extract preliminary Static Timing Analysis (STA). If an ALU pipeline is failing setup timing because a combinatorial path has too many layers of logic, we physically unroll loops, re-time logic by shifting registers, or push combinatorial clouds across flip-flop boundaries to balance the pipeline perfectly.
                                     </p>
                                 </div>
-                                <div className="bg-[#0f172a] p-8 rounded-3xl border border-blue-900/50">
+                                <div className="bg-[#0f172a] p-6 md:p-8 rounded-2xl md:rounded-3xl border border-blue-900/50">
                                     <h4 className="font-bold text-xl text-white mb-6 border-b border-slate-800 pb-4">Architectural Expertise</h4>
                                     <ul className="space-y-4">
                                         <li className="flex items-start gap-3">
